@@ -1,3 +1,4 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -7,7 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Todo = void 0;
+const typeorm_1 = require("typeorm");
 let Todo = class Todo {
     id;
     title;
@@ -15,28 +18,28 @@ let Todo = class Todo {
     completed;
     createdAt;
 };
+exports.Todo = Todo;
 __decorate([
-    PrimaryGeneratedColumn("increment"),
+    (0, typeorm_1.PrimaryGeneratedColumn)("increment"),
     __metadata("design:type", Number)
 ], Todo.prototype, "id", void 0);
 __decorate([
-    Column({ length: 100 }),
+    (0, typeorm_1.Column)({ length: 100 }),
     __metadata("design:type", String)
 ], Todo.prototype, "title", void 0);
 __decorate([
-    Column("text"),
+    (0, typeorm_1.Column)("text"),
     __metadata("design:type", String)
 ], Todo.prototype, "description", void 0);
 __decorate([
-    Column("boolean", { default: false }),
+    (0, typeorm_1.Column)("boolean", { default: false }),
     __metadata("design:type", Boolean)
 ], Todo.prototype, "completed", void 0);
 __decorate([
-    Column("timestamp", { default: () => "CURRENT_TIMESTAMP" }),
+    (0, typeorm_1.Column)("timestamp", { default: () => "CURRENT_TIMESTAMP" }),
     __metadata("design:type", Date)
 ], Todo.prototype, "createdAt", void 0);
-Todo = __decorate([
-    Entity()
+exports.Todo = Todo = __decorate([
+    (0, typeorm_1.Entity)()
 ], Todo);
-export { Todo };
 //# sourceMappingURL=todo.entity.js.map
